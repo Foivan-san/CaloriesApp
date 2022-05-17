@@ -51,7 +51,7 @@ public class DBAdapter {
                         "    Address varchar(255)," +
                         "    City varchar(255)" +
                         ");");
-                //foivan1
+                //foivan12
 
             }
             catch (SQLException e)
