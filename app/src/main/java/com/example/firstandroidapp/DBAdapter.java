@@ -44,6 +44,13 @@ public class DBAdapter {
             try
             {
                 //Create tables
+                db.execSQL("CREATE TABLE IF NOT EXISTS food (" +
+                        "    PersonID int," +
+                        "    LastName varchar(255)," +
+                        "    FirstName varchar(255)," +
+                        "    Address varchar(255)," +
+                        "    City varchar(255)" +
+                        ");");
             }
             catch (SQLException e)
             {
