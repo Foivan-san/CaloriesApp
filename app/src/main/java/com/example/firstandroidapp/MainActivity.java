@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
         //Database
         DBAdapter db = new DBAdapter(this);
         db.open();
+        //db.insert("Prwino", "ID, Prwino_name, Prwino_8ermides", "1, 'mhlo', 24");
         db.close();
 
         Toast.makeText(this, "Database works!", Toast.LENGTH_SHORT).show();
