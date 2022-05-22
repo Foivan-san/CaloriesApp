@@ -44,40 +44,11 @@ public class DBAdapter {
             try
             {
                 //Create tables
-                db.execSQL("CREATE TABLE IF NOT EXISTS BREAKFAST (" +
-                        "   BREAKFAST_ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL ," +
-                        "   BREAKFAST_NAME VARCHAR(255) NOT NULL," +
-                        "   BREAKFAST_CAL FLOAT NOT NULL" +
-                        ");");
-
-                db.execSQL("CREATE TABLE IF NOT EXISTS DECATIAN (" +
-                        "   DECATIAN_ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL ," +
-                        "   DECATIAN_NAME VARCHAR(255) NOT NULL," +
-                        "   DECATIAN_CAL FLOAT NOT NULL" +
-                        ");");
-
-                db.execSQL("CREATE TABLE IF NOT EXISTS LUNCH (" +
-                        "   LUNCH_ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL ," +
-                        "   LUNCH_NAME VARCHAR(255) NOT NULL," +
-                        "   LUNCH_CAL FLOAT NOT NULL" +
-                        ");");
-
-                db.execSQL("CREATE TABLE IF NOT EXISTS AFTERNOON (" +
-                        "   AFTERNOON_ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL ," +
-                        "   AFTERNOON_NAME VARCHAR(255) NOT NULL," +
-                        "   AFTERNOON_CAL FLOAT NOT NULL" +
-                        ");");
-
-                db.execSQL("CREATE TABLE IF NOT EXISTS DINNER (" +
-                        "   DINNER_ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL ," +
-                        "   DINNER_NAME VARCHAR(255) NOT NULL," +
-                        "   DINNER_CAL FLOAT NOT NULL" +
-                        ");");
-
-                db.execSQL("CREATE TABLE IF NOT EXISTS SNACK (" +
-                        "   SNACK_ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL ," +
-                        "   SNACK_NAME VARCHAR(255) NOT NULL," +
-                        "   SNACK_CAL FLOAT NOT NULL" +
+                db.execSQL("CREATE TABLE IF NOT EXISTS food (" +
+                        "   food_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL ," +
+                        "   food_name VARCHAR(255) NOT NULL," +
+                        "   food_cal FLOAT NOT NULL," +
+                        "   food_measurement VARCHAR(255) NOT NULL" +
                         ");");
             }
             catch (SQLException e)
@@ -89,12 +60,7 @@ public class DBAdapter {
         @Override
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
         {
-            db.execSQL("DROP TABLE IF EXISTS BREAKFAST");
-            db.execSQL("DROP TABLE IF EXISTS DECATIAN");
-            db.execSQL("DROP TABLE IF EXISTS LUNCH");
-            db.execSQL("DROP TABLE IF EXISTS AFTERNOON");
-            db.execSQL("DROP TABLE IF EXISTS DINNER");
-            db.execSQL("DROP TABLE IF EXISTS SNACK");
+            db.execSQL("DROP TABLE IF EXISTS food");
             onCreate(db);
 
             String TAG = "Tag";
@@ -126,4 +92,14 @@ public class DBAdapter {
     }
     //-----------------------------------------------------------------------------------Insert data
 
+    //Count-----------------------------------------------------------------------------------------
+    public int countTableRows(String table)
+    {
+        Cursor mCount = db.rawQuery("SELECT COUNT(*) FROM " + table + "", null);
+        mCount.moveToFirst();
+        int count = mCount.getInt(0);
+        mCount.close();
+        return count;
+    }
+    //----------------------------------------------------------------------------------------- Count
 }

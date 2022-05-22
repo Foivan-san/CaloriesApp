@@ -14,9 +14,17 @@ public class MainActivity extends AppCompatActivity {
         //Database
         DBAdapter db = new DBAdapter(this);
         db.open();
-        //db.insert("Prwino", "ID, Prwino_name, Prwino_8ermides", "1, 'mhlo', 24");
+
+        //Count rows in table food
+        int tableRows = db.countTableRows("food");
+
+        if(tableRows < 1)
+        {
+            DBSetupInsert setupInsert = new DBSetupInsert(this);
+            setupInsert.insertAllFood();
+        }
+
         db.close();
 
-        Toast.makeText(this, "Database works!", Toast.LENGTH_SHORT).show();
     }
 }
