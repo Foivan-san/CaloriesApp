@@ -58,6 +58,15 @@ public class DBSetupInsert {
         setupInsertToFood("'Pad Thai', '591', 'g'");
         setupInsertToFood("'Chicken Fajita', '156', 'g'");
         setupInsertToFood("'Salt & Vinegar Crisps', '130', 'g'");
+        setupInsertToFood("'Beans', '80', 'g'");
+        setupInsertToFood("'T-bone steak', '400', 'g'");
+        setupInsertToFood("'Sausage', '100', 'g'");
+        setupInsertToFood("'Pork steak', '440', 'g'");
+        setupInsertToFood("'Beef steak', '400', 'g'");
+        setupInsertToFood("'Salmon tin', '90', 'g'");
+        setupInsertToFood("'Tuna fish tin', '90', 'g'");
+        setupInsertToFood("'Lamp', '170', 'g'");
+        setupInsertToFood("'Cottage cheese', '70', 'g'");
 
 //Πρωινό και Σνακ
         setupInsertToFood("'Banana', '120', 'g'");
@@ -81,5 +90,21 @@ public class DBSetupInsert {
         setupInsertToFood("'Coca Cola', '151', 'g'");
         setupInsertToFood("'Chocolate Milk', '75', 'g'");
         setupInsertToFood("'Pineapple', '45', 'g'");
+        setupInsertToFood("'Medium Pancake', '80', 'g'");
+        setupInsertToFood("'Greek Koulouri', '80', 'g'");
+        setupInsertToFood("'Oat Cereal', '80', 'g'");
+        setupInsertToFood("'Musli', '80', 'g'");
+        setupInsertToFood("'Snack bar', '80', 'g'");
+        setupInsertToFood("'Pretzel', '80', 'g'");
+        setupInsertToFood("'Pop corn without butter', '80', 'g'");
+        setupInsertToFood("'Mango', '60', 'g'");
+        setupInsertToFood("'Grapefruit', '80', 'g'");
+        setupInsertToFood("'Slice of watermelon', '60', 'g'");
+        setupInsertToFood("'Apple', '60', 'g'");
+        setupInsertToFood("'Orange', '60', 'g'");
+        setupInsertToFood("'Medium bunch of grapes', '60', 'g'");
+        setupInsertToFood("'Glass of natural juice', '60', 'g'");
+        setupInsertToFood("'Milk low fat '100', 'g'");
+        setupInsertToFood("'Milk full fat', '160', 'g'");
     }
 }
