@@ -1,3 +1,31 @@
 <resources>
-    <string name="app_name">FirstAndroidApp</string>
+    <string name="app_name">CC</string>
+    <string name="email">Email: </string>
+    <string name="nickname">Username: </string>
+    <string name="date_of_birth">Date of birth: </string>
+    <string name="gender">Gender: </string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="height">Height: </string>
+    <string name="weight">Weight: </string>
+    <string name="target_weight">Target Weight: </string>
+    <string name="sign_up_button">Sign Up</string>
+
+    <string name="day">Day</string>
+    <string name="month">Month</string>
+    <string name="year">Year</string>
+    <string-array name="months">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
 </resources>

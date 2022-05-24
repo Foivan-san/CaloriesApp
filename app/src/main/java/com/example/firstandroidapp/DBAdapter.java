@@ -50,6 +50,18 @@ public class DBAdapter {
                         "   food_cal FLOAT NOT NULL," +
                         "   food_measurement VARCHAR(255) NOT NULL" +
                         ");");
+
+                db.execSQL("CREATE TABLE IF NOT EXISTS users (" +
+                        "   user_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL ," +
+                        "   user_email VARCHAR(255) NOT NULL," +
+                        "   user_nickname VARCHAR(255), " +
+                        "   user_password VARCHAR(255) NOT NULL," +
+                        "   user_dob DATE NOT NULL," +
+                        "   user_gender INT," +
+                        "   user_height INT NOT NULL," +
+                        "   user_weight INT NOT NULL," +
+                        "   user_target_weight INT NOT NULL," +
+                        "   user_last_seen TIME NOT NULL);");
             }
             catch (SQLException e)
             {
@@ -61,6 +73,7 @@ public class DBAdapter {
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
         {
             db.execSQL("DROP TABLE IF EXISTS food");
+            db.execSQL("DROP TABLE IF EXISTS users");
             onCreate(db);
 
             String TAG = "Tag";
