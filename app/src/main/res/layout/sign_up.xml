@@ -2,25 +2,30 @@
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:fitsSystemWindows="true">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="28dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp">
 
         <ImageView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="110dp"
             android:layout_gravity="center_horizontal"
             android:layout_margin="10dp"
             android:src="@drawable/logo" />
 
         <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
 
             //UserName------------------------------------------------------------------------------
 
@@ -32,17 +37,19 @@
                     android:id="@+id/textViewUserName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:text="@string/nickname" />
 
                 <EditText
                     android:id="@+id/editTextUserName"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="@android:dimen/app_icon_size"
+                    android:layout_marginRight="30dp"
                     android:ems="10"
                     android:hint="Enter your username"
                     android:inputType="textPersonName"
                     android:textAlignment="center"
-                    android:textSize="15dp" />
+                    android:textSize="13dp" />
             </TableRow>
             //------------------------------------------------------------------------------Username
 
@@ -54,26 +61,28 @@
 
                 <TextView
                     android:id="@+id/textViewEmail"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:text="@string/email" />
 
                 <EditText
                     android:id="@+id/editTextEmailAddress"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="@android:dimen/app_icon_size"
+                    android:layout_marginRight="30dp"
                     android:ems="10"
                     android:hint="Enter your email address"
                     android:inputType="textEmailAddress"
                     android:textAlignment="center"
-                    android:textSize="15dp" />
+                    android:textSize="13dp" />
             </TableRow>
             //---------------------------------------------------------------------------------Email
 
             //DOB-----------------------------------------------------------------------------------
 
             <TableRow
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
                 <TextView
@@ -84,32 +93,36 @@
                     android:text="@string/date_of_birth" />
 
                 <TableLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <EditText
-                            android:id="@+id/DOB_DAY"
+                        <Spinner
+                            android:id="@+id/spinnerDays"
+                            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
                             android:layout_width="wrap_content"
                             android:layout_height="@android:dimen/app_icon_size"
-                            android:ems="3"
-                            android:inputType="numberSigned" />
+                            android:layout_marginTop="1dp"
+                            android:dropDownWidth="wrap_content" />
 
                         <Spinner
-                            android:id="@+id/spinner"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:entries="@array/months" />
-
-                        <EditText
-                            android:id="@+id/DOB_YEAR"
+                            android:id="@+id/spinnerMonths"
+                            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
                             android:layout_width="wrap_content"
                             android:layout_height="@android:dimen/app_icon_size"
-                            android:ems="4"
-                            android:inputType="numberSigned" />
+                            android:layout_marginTop="1dp"
+                            android:entries="@array/months"
+                            android:minHeight="48dp" />
+
+                        <Spinner
+                            android:id="@+id/spinnerYears"
+                            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@android:dimen/app_icon_size"
+                            android:layout_marginTop="1dp" />
 
                     </TableRow>
 
@@ -122,21 +135,25 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="15dp"
-                            android:text="@string/day" />
+                            android:text="@string/day"
+                            android:textSize="13dp" />
 
                         <TextView
                             android:id="@+id/textViewMonth"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="15dp"
-                            android:text="@string/month" />
+                            android:text="@string/month"
+                            android:textSize="13dp" />
 
                         <TextView
                             android:id="@+id/textViewYear"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="30dp"
-                            android:text="@string/year" />
+                            android:layout_marginLeft="15dp"
+                            android:text="@string/year"
+                            android:textSize="13dp" />
+
                     </TableRow>
 
                 </TableLayout>
@@ -154,31 +171,38 @@
                     android:id="@+id/textViewGender"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/gender"
-                    android:layout_marginTop="15dp"/>
+                    android:layout_marginTop="15dp"
+                    android:text="@string/gender" />
 
-                <RadioGroup
+                <TableLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" >
+                    android:layout_height="wrap_content">
 
                     <TableRow
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="match_parent">
 
-                        <RadioButton
-                            android:id="@+id/radioButtonGender"
-                            android:layout_width="wrap_content"
+                        <RadioGroup
+                            android:id="@+id/radioGroup1"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/male" />
+                            android:orientation="horizontal">
 
-                        <RadioButton
-                            android:id="@+id/radioButtonGender2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/female" />
+                            <RadioButton
+                                android:id="@+id/radioButtonGender"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/male" />
 
+                            <RadioButton
+                                android:id="@+id/radioButtonGender2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="10dp"
+                                android:text="@string/female" />
+                        </RadioGroup>
                     </TableRow>
-                </RadioGroup>
+                </TableLayout>
 
             </TableRow>
             //--------------------------------------------------------------------------------Gender
@@ -187,41 +211,83 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/textView9"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/textViewHeight"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
                     android:text="@string/height" />
 
-                <EditText
-                    android:id="@+id/editTextNumber2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="@android:dimen/app_icon_size"
-                    android:ems="10"
-                    android:inputType="number" />
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/editTextNumberHeight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@android:dimen/app_icon_size"
+                            android:ems="10"
+                            android:hint="Enter your height"
+                            android:inputType="number"
+                            android:textAlignment="center"
+                            android:textSize="13dp" />
+
+                        <TextView
+                            android:id="@+id/textViewHeightMeasure"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/height_measure" />
+                    </TableRow>
+
+                </TableLayout>
+
             </TableRow>
             //--------------------------------------------------------------------------------Height
-
             //Weight--------------------------------------------------------------------------------
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/textView10"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/textViewWeight"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
                     android:text="@string/weight" />
 
-                <EditText
-                    android:id="@+id/editTextNumber3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="@android:dimen/app_icon_size"
-                    android:ems="10"
-                    android:inputType="number" />
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/editTextNumberWeight"
+                            android:layout_width="match_parent"
+                            android:layout_height="@android:dimen/app_icon_size"
+                            android:ems="10"
+                            android:hint="Enter your weight"
+                            android:inputType="number"
+                            android:textAlignment="center"
+                            android:textSize="13dp" />
+
+                        <TextView
+                            android:id="@+id/textViewWeightMeasure"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/weight_measure" />
+                    </TableRow>
+                </TableLayout>
+
             </TableRow>
             //--------------------------------------------------------------------------------Weight
 
@@ -229,22 +295,44 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/textView11"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/textViewTargetWeight"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
                     android:text="@string/target_weight" />
 
-                <EditText
-                    android:id="@+id/editTextNumber4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="@android:dimen/app_icon_size"
-                    android:ems="10"
-                    android:inputType="number" />
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TableRow
+                        android:layout_width="226dp"
+                        android:layout_height="2dp">
+
+                        <EditText
+                            android:id="@+id/editTextNumberTargetWeight"
+                            android:layout_width="match_parent"
+                            android:layout_height="@android:dimen/app_icon_size"
+                            android:ems="10"
+                            android:hint="Enter your target weight"
+                            android:inputType="number"
+                            android:textAlignment="center"
+                            android:textSize="13dp" />
+
+                        <TextView
+                            android:id="@+id/textViewTargetWeightMeasure"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/weight_measure" />
+                    </TableRow>
+                </TableLayout>
+
             </TableRow>
             //-------------------------------------------------------------------------Target Weight
+
         </TableLayout>
 
         <Button
@@ -254,7 +342,6 @@
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
             android:text="@string/sign_up_button" />
-
 
     </LinearLayout>
 
