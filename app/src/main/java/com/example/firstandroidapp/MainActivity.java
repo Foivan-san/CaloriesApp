@@ -1,9 +1,12 @@
 package com.example.firstandroidapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -12,6 +15,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
 
         //Database
         DBAdapter db = new DBAdapter(this);
@@ -34,11 +40,13 @@ public class MainActivity extends AppCompatActivity {
         {
             //Text before the sign up
             Toast.makeText(this, "Few steps away from sign up!", Toast.LENGTH_SHORT).show();
-            Intent i = new Intent(MainActivity.this, SignUp.class);
+            Intent i = new Intent(MainActivity.this, mymenu.class);
             startActivity(i);
         }
 
         db.close();
 
     }
+
+
 }
