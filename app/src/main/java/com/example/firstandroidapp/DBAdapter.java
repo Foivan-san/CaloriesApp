@@ -53,8 +53,8 @@ public class DBAdapter {
 
                 db.execSQL("CREATE TABLE IF NOT EXISTS users (" +
                         "   user_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL ," +
-                        "   user_email VARCHAR(255) NOT NULL," +
                         "   user_nickname VARCHAR(255), " +
+                        "   user_email VARCHAR(255) NOT NULL," +
                         "   user_password VARCHAR(255) NOT NULL," +
                         "   user_dob DATE NOT NULL," +
                         "   user_gender INT," +
@@ -97,6 +97,44 @@ public class DBAdapter {
         DBHelper.close();
     }
     //--------------------------------------------------------------------------------Close database
+
+    //Checking if all entries in Sign up are not dangerous for the database-------------------------
+    public String  quoteSmart(String value)
+    {
+        boolean isNumeric = false;
+        try {
+            double myDouble = Double.parseDouble(value);
+            isNumeric = true;
+        }
+        catch (NumberFormatException nfe){
+            System.out.println("Could not parse " + nfe);
+        }
+        if(isNumeric==false){
+            if(value != null && value.length() > 0){
+                value = value.replace("\\", "\\\\");
+                value = value.replace("'", "\\'");
+                value = value.replace("\0", "\\0");
+                value = value.replace("\n", "\\n");
+                value = value.replace("\r", "\\r");
+                value = value.replace("\"", "\\\"");
+                value = value.replace("\\x1a", "\\Z");
+            }
+        }
+
+        value = "'" + value + "'";
+        return value;
+    }
+
+    public double quoteSmart(double value)
+    {
+        return value;
+    }
+
+    public int quoteSmart(int value)
+    {
+        return value;
+    }
+    //----------------------------------------------------------------------------------------------
 
     //Insert data-----------------------------------------------------------------------------------
     public void insert(String table, String fields, String values)
