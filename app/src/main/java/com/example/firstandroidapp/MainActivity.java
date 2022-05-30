@@ -16,9 +16,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
-
         //Database
         DBAdapter db = new DBAdapter(this);
         db.open();
@@ -40,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         {
             //Text before the sign up
             Toast.makeText(this, "Few steps away from sign up!", Toast.LENGTH_SHORT).show();
-            Intent i = new Intent(MainActivity.this, mymenu.class);
+            Intent i = new Intent(MainActivity.this, SignUp.class);
             startActivity(i);
         }
 

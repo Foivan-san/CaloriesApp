@@ -18,7 +18,7 @@ public class DBAdapter {
 
     //Database Variables----------------------------------------------------------------------------
     private final Context context;
-    private DatabaseHelper DBHelper;
+    private final DatabaseHelper DBHelper;
     private SQLiteDatabase db;
     //----------------------------------------------------------------------------Database Variables
 
@@ -41,8 +41,7 @@ public class DBAdapter {
         @Override
         public void onCreate(SQLiteDatabase db)
         {
-            try
-            {
+            try {
                 //Create tables
                 db.execSQL("CREATE TABLE IF NOT EXISTS food (" +
                         "   food_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL ," +
@@ -50,7 +49,12 @@ public class DBAdapter {
                         "   food_cal FLOAT NOT NULL," +
                         "   food_measurement VARCHAR(255) NOT NULL" +
                         ");");
-
+            }
+            catch (SQLException e)
+            {
+                e.printStackTrace();
+            }
+            try {
                 db.execSQL("CREATE TABLE IF NOT EXISTS users (" +
                         "   user_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL ," +
                         "   user_nickname VARCHAR(255), " +
@@ -91,13 +95,6 @@ public class DBAdapter {
     }
     //---------------------------------------------------------------------------------Open database
 
-    //Close database--------------------------------------------------------------------------------
-    public void close()
-    {
-        DBHelper.close();
-    }
-    //--------------------------------------------------------------------------------Close database
-
     //Checking if all entries in Sign up are not dangerous for the database-------------------------
     public String  quoteSmart(String value)
     {
@@ -109,7 +106,7 @@ public class DBAdapter {
         catch (NumberFormatException nfe){
             System.out.println("Could not parse " + nfe);
         }
-        if(isNumeric==false){
+        if(!isNumeric){
             if(value != null && value.length() > 0){
                 value = value.replace("\\", "\\\\");
                 value = value.replace("'", "\\'");
@@ -153,4 +150,12 @@ public class DBAdapter {
         return count;
     }
     //----------------------------------------------------------------------------------------- Count
+
+    //Close database--------------------------------------------------------------------------------
+    public void close()
+    {
+        DBHelper.close();
+    }
+    //--------------------------------------------------------------------------------Close database
+
 }

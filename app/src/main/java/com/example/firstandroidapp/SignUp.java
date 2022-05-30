@@ -1,5 +1,6 @@
 package com.example.firstandroidapp;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.provider.ContactsContract;
@@ -27,29 +28,29 @@ public class SignUp  extends AppCompatActivity {
         setContentView(R.layout.sign_up);
 
         //DAY SPINNER
-        ArrayList<String> days = new ArrayList<String>();
+        ArrayList<String> days = new ArrayList<>();
         for(int x=1; x<=31; x++)
         {
             days.add(Integer.toString(x));
         }
         Spinner spinnerDay = (Spinner) findViewById(R.id.spinnerDays);
-        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, days);
+        ArrayAdapter<String> adapter1 = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, days);
         spinnerDay.setAdapter(adapter1);
 
         //YEAR SPINNER
-        ArrayList<String> years = new ArrayList<String>();
+        ArrayList<String> years = new ArrayList<>();
         int thisYear = Calendar.getInstance().get(Calendar.YEAR);
         for (int i = 1900; i <= thisYear; i++) {
             years.add(Integer.toString(i));
         }
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, years);
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, years);
 
         Spinner spinYear = (Spinner)findViewById(R.id.spinnerYears);
         spinYear.setAdapter(adapter2);
 
         //Listener of sign up button
         Button buttonSignUp = (Button)findViewById(R.id.buttonSignUp);
-        buttonSignUp.setOnClickListener(new View.OnClickListener() {
+        buttonSignUp.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 signUpSubmit();
@@ -76,11 +77,7 @@ public class SignUp  extends AppCompatActivity {
         EditText editTextUserName = (EditText)findViewById(R.id.editTextUserName);
         String stringUsername = editTextUserName.getText().toString();
         if(stringUsername.isEmpty()){
-            textViewUserName.setTextColor(Color.RED);
             errorMessage = "Please fill in a username!";
-        }
-        else{
-            textViewUserName.setTextColor(Color.GRAY);
         }
 
         //Email
@@ -88,11 +85,7 @@ public class SignUp  extends AppCompatActivity {
         EditText editTextEmailAddress = (EditText)findViewById(R.id.editTextEmailAddress);
         String stringEmail = editTextEmailAddress.getText().toString();
         if(stringEmail.isEmpty() || stringEmail.startsWith(" ")){
-            textViewEmail.setTextColor(Color.RED);
             errorMessage = "Please fill in an email address!";
-        }
-        else{
-            textViewEmail.setTextColor(Color.GRAY);
         }
 
         //Date of birth DAY
@@ -101,6 +94,10 @@ public class SignUp  extends AppCompatActivity {
         int intDOBDay = 0;
         try{
             intDOBDay = Integer.parseInt(stringDOBDay);
+
+            if(intDOBDay < 10){
+                stringDOBDay = "0" + stringDOBDay;
+            }
         }
         catch(NumberFormatException nfe){
             System.out.println("Could not parse " + nfe);
@@ -136,9 +133,17 @@ public class SignUp  extends AppCompatActivity {
 
         //Gender
         RadioGroup radioGroupGender = (RadioGroup)findViewById(R.id.radioGroupGender);
-        int selectedId = radioGroupGender.getCheckedRadioButtonId();
-        RadioButton radioButtonGender = (RadioButton)findViewById(selectedId);
-        String stringGender = radioButtonGender.toString();
+        int radioButtonId = radioGroupGender.getCheckedRadioButtonId();
+        View radioButtonGender = radioGroupGender.findViewById(radioButtonId);
+        int position = radioGroupGender.indexOfChild(radioButtonGender);
+
+        String stringGender = "";
+        if(position==0){
+            stringGender = "Male";
+        }
+        else{
+            stringGender = "Female";
+        }
 
         //Height
         EditText editTextNumberHeight = (EditText)findViewById(R.id.editTextNumberHeight);
@@ -176,10 +181,11 @@ public class SignUp  extends AppCompatActivity {
         catch(NumberFormatException nfe){
             System.out.println("Target weight has to be a number!");
         }
-        Toast.makeText(this, target_weight + " kg", Toast.LENGTH_LONG).show();
 
         //Error handling
-        if(errorMessage.isEmpty()){
+        if(errorMessage.isEmpty())
+        {
+
             //Put data into database
             textViewErrorMessage.setVisibility(View.GONE);
             imageViewError.setVisibility(View.GONE);
@@ -204,6 +210,9 @@ public class SignUp  extends AppCompatActivity {
                     "user_height, user_weight, user_target_weight", stringInput);
 
             db.close();
+
+            Intent i = new Intent(SignUp.this,MainActivity.class);
+            startActivity(i);
         }
         else {
             textViewErrorMessage.setText(errorMessage);
