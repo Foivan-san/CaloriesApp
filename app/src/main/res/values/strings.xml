@@ -1,31 +1,33 @@
 <resources>
     <string name="app_name">CC</string>
-    <string name="email">Email: </string>
-    <string name="nickname">Username: </string>
-    <string name="date_of_birth">Date of birth: </string>
-    <string name="gender">Gender: </string>
+    <string name="email"><b>Email:</b> </string>
+    <string name="nickname"><b>Username:</b> </string>
+    <string name="date_of_birth"><b>Date of birth: </b> </string>
+    <string name="gender"><b>Gender: </b></string>
     <string name="male">Male</string>
     <string name="female">Female</string>
-    <string name="height">Height: </string>
-    <string name="weight">Weight: </string>
-    <string name="target_weight">Target Weight: </string>
+    <string name="height"><b>Height: </b></string>
+    <string name="height_measure">cm</string>
+    <string name="weight"><b>Weight: </b></string>
+    <string name="weight_measure">kg</string>
+    <string name="target_weight"><b>Target Weight: </b></string>
     <string name="sign_up_button">Sign Up</string>
 
     <string name="day">Day</string>
     <string name="month">Month</string>
     <string name="year">Year</string>
     <string-array name="months">
-        <item>January</item>
-        <item>February</item>
-        <item>March</item>
-        <item>April</item>
-        <item>May</item>
-        <item>June</item>
-        <item>July</item>
-        <item>August</item>
-        <item>September</item>
-        <item>October</item>
-        <item>November</item>
-        <item>December</item>
+        <item>01</item>
+        <item>02</item>
+        <item>03</item>
+        <item>04</item>
+        <item>05</item>
+        <item>06</item>
+        <item>07</item>
+        <item>08</item>
+        <item>09</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
     </string-array>
 </resources>
