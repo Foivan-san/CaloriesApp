@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/menuProfile"
+        android:icon="@drawable/profil"
+        android:title="@string/my_profile"/>
+
+    <item android:id="@+id/menuStatistics"
+        android:icon="@drawable/statistics"
+        android:title="@string/statistics"/>
+
+    <item android:id="@+id/menuFood"
+        android:icon="@drawable/food"
+        android:title="@string/food"/>
+
+    <item android:id="@+id/menuRecipes"
+        android:icon="@drawable/recipe"
+        android:title="@string/recipes"/>
+
+    <item android:id="@+id/menuQrScanner"
+        android:icon="@drawable/qr"
+        android:title="@string/qr_scanner"/>
+
+</menu>
