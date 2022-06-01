@@ -1,3 +1,4 @@
+/*
 package com.example.firstandroidapp;
 
 import android.view.Menu;
@@ -36,3 +37,5 @@ public class mymenu extends AppCompatActivity {
     }
 }
 //str
+
+ */
