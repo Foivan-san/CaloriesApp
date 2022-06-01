@@ -7,40 +7,29 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-import android.widget.Toast;
 
 public class DBAdapter {
 
-    //Variables-------------------------------------------------------------------------------------
-    private static final String databaseName = "caloriesApp";
-    private static final int databaseVersion = 1;
-    //-------------------------------------------------------------------------------------Variables
-
-    //Database Variables----------------------------------------------------------------------------
+    //Database variables
     private final Context context;
-    private final DatabaseHelper DBHelper;
+    private DatabaseHelper DBHelper;
     private SQLiteDatabase db;
-    //----------------------------------------------------------------------------Database Variables
 
-    //Class DbAdapter-------------------------------------------------------------------------------
-    public DBAdapter(Context ctx)
-    {
+    private static final String DBNAME = "CaloriesApp.db";
+
+    //--------------------------------class DbAdapter-----------------------------------------------
+    public DBAdapter(Context ctx) {
         this.context = ctx;
         DBHelper = new DatabaseHelper(context);
     }
-    //-------------------------------------------------------------------------------Class DbAdapter
 
-    //DatabaseHelper--------------------------------------------------------------------------------
-    private static class DatabaseHelper extends SQLiteOpenHelper
-    {
-        DatabaseHelper(Context context)
-        {
-            super(context, databaseName, null, databaseVersion);
+    private static class DatabaseHelper extends SQLiteOpenHelper {
+        DatabaseHelper(Context context) {
+            super(context, DBNAME, null, 1);
         }
 
         @Override
-        public void onCreate(SQLiteDatabase db)
-        {
+        public void onCreate(SQLiteDatabase db) {
             try {
                 //Create tables
                 db.execSQL("CREATE TABLE IF NOT EXISTS food (" +
@@ -49,33 +38,18 @@ public class DBAdapter {
                         "   food_cal FLOAT NOT NULL," +
                         "   food_measurement VARCHAR(255) NOT NULL" +
                         ");");
-            }
-            catch (SQLException e)
-            {
+            } catch (SQLException e) {
                 e.printStackTrace();
             }
             try {
-                db.execSQL("CREATE TABLE IF NOT EXISTS users (" +
-                        "   user_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL ," +
-                        "   user_nickname VARCHAR(255), " +
-                        "   user_email VARCHAR(255) NOT NULL," +
-                        "   user_password VARCHAR(255) NOT NULL," +
-                        "   user_dob DATE NOT NULL," +
-                        "   user_gender INT," +
-                        "   user_height INT NOT NULL," +
-                        "   user_weight INT NOT NULL," +
-                        "   user_target_weight INT NOT NULL," +
-                        "   user_last_seen TIME NOT NULL);");
-            }
-            catch (SQLException e)
-            {
+                db.execSQL("create Table users(username TEXT primary key, password TEXT)");
+            } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
 
         @Override
-        public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
-        {
+        public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
             db.execSQL("DROP TABLE IF EXISTS food");
             db.execSQL("DROP TABLE IF EXISTS users");
             onCreate(db);
@@ -85,77 +59,59 @@ public class DBAdapter {
                     + newVersion + " , which will destroy all old data");
         }
     }
-    //--------------------------------------------------------------------------------DatabaseHelper
 
-    //Open database
-    public DBAdapter open() throws SQLException
-    {
-        db = DBHelper.getWritableDatabase();
-        return this;
-    }
-    //---------------------------------------------------------------------------------Open database
-
-    //Checking if all entries in Sign up are not dangerous for the database-------------------------
-    public String  quoteSmart(String value)
-    {
-        boolean isNumeric = false;
-        try {
-            double myDouble = Double.parseDouble(value);
-            isNumeric = true;
-        }
-        catch (NumberFormatException nfe){
-            System.out.println("Could not parse " + nfe);
-        }
-        if(!isNumeric){
-            if(value != null && value.length() > 0){
-                value = value.replace("\\", "\\\\");
-                value = value.replace("'", "\\'");
-                value = value.replace("\0", "\\0");
-                value = value.replace("\n", "\\n");
-                value = value.replace("\r", "\\r");
-                value = value.replace("\"", "\\\"");
-                value = value.replace("\\x1a", "\\Z");
-            }
+        //---------------------------------Open Database--------------------------------------------
+        public DBAdapter open() throws SQLException {
+            db = DBHelper.getWritableDatabase();
+            return this;
         }
 
-        value = "'" + value + "'";
-        return value;
-    }
+        //----------------------------------Close Database------------------------------------------
+        public void close() { DBHelper.close();}
 
-    public double quoteSmart(double value)
-    {
-        return value;
-    }
+        //-----------------------------------Insert data--------------------------------------------
+        public void insert(String table, String fields, String values)
+        {
+            db.execSQL("INSERT INTO " + table + "(" + fields + ") VALUES (" + values + ")");
+        }
 
-    public int quoteSmart(int value)
-    {
-        return value;
-    }
-    //----------------------------------------------------------------------------------------------
+        public Boolean insertData(String username, String password) {
+            SQLiteDatabase MyDB = this.DBHelper.getWritableDatabase();
+            ContentValues contentValues = new ContentValues();
+            contentValues.put("username", username);
+            contentValues.put("password", password);
+            long result = MyDB.insert("users", null, contentValues);
+            if (result == -1) return false;
+            else
+                return true;
+        }
 
-    //Insert data-----------------------------------------------------------------------------------
-    public void insert(String table, String fields, String values)
-    {
-        db.execSQL("INSERT INTO " + table + "(" + fields + ") VALUES (" + values + ")");
-    }
-    //-----------------------------------------------------------------------------------Insert data
+        public Boolean checkUsername(String username) {
+            SQLiteDatabase MyDB = this.DBHelper.getWritableDatabase();
+            Cursor cursor = MyDB.rawQuery("Select * from users where username = ?", new String[]{username});
+            if (cursor.getCount() > 0)
+                return true;
+            else
+                return false;
+        }
 
-    //Count-----------------------------------------------------------------------------------------
-    public int countTableRows(String table)
-    {
-        Cursor mCount = db.rawQuery("SELECT COUNT(*) FROM " + table + "", null);
-        mCount.moveToFirst();
-        int count = mCount.getInt(0);
-        mCount.close();
-        return count;
-    }
-    //----------------------------------------------------------------------------------------- Count
+        public Boolean checkUsernamePassword(String username, String password) {
+            SQLiteDatabase MyDB = this.DBHelper.getWritableDatabase();
+            Cursor cursor = MyDB.rawQuery("Select * from users where username = ? and password = ?", new String[]{username, password});
+            if (cursor.getCount() > 0)
+                return true;
+            else
+                return false;
+        }
 
-    //Close database--------------------------------------------------------------------------------
-    public void close()
-    {
-        DBHelper.close();
-    }
-    //--------------------------------------------------------------------------------Close database
-
+        //Count-----------------------------------------------------------------------------------------
+        public int countTableRows(String table) {
+            SQLiteDatabase db = this.DBHelper.getWritableDatabase();
+            Cursor mCount = db.rawQuery("SELECT COUNT(*) FROM " + table + "", null);
+            mCount.moveToFirst();
+            int count = mCount.getInt(0);
+            mCount.close();
+            return count;
+        }
+        //----------------------------------------------------------------------------------------- Count
 }

@@ -1,18 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="10dp"
     tools:context=".MainActivity">
 
-    <TextView
+    <TableLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="City Center for the win MALAKES"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="wrap_content">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/logo"/>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ErrorImg"
+                android:src="@drawable/error_message"
+                android:layout_width="30dp"
+                android:layout_height="30dp"/>
+            <TextView
+                android:id="@+id/ErrorMsg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Error!"
+                android:textSize="15dp"
+                android:layout_marginTop="5dp"/>
+
+        </TableRow>
+
+        <EditText
+            android:id="@+id/Username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Username"
+            android:layout_marginTop="10dp"
+            android:inputType="text"
+            android:textAlignment="center"/>
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/Username"
+            android:textAlignment="center"/>
+
+        <EditText
+            android:id="@+id/rePassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Retype Password"
+            android:inputType="textPassword"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/password"
+            android:textAlignment="center"/>
+
+        <TableRow
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkboxRow">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/recaptcha"
+                android:id="@+id/Recaptcha"/>
+            <CheckBox
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:id="@+id/checkbox"
+                android:text="I'm not a robot"
+                android:textSize="15dp"
+                android:layout_marginTop="3dp"/>
+        </TableRow>
+        <Button
+            android:id="@+id/btnSignUp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sign up"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/checkboxRow"/>
+
+        <Button
+            android:id="@+id/btnSignIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Existing user? Go to Sign in page"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/btnSignUp"/>
+
+    </TableLayout>
+</RelativeLayout>
