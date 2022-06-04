@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="80dp"
+        android:gravity="center"
+        android:rotationY="20"
+        android:text="Eat better  Not less"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="50dp"
+        android:fontFamily="@font/Amatic-Bold"/>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="382dp"
+        android:layout_height="352dp"
+        android:text="Η εφαρμογή ΧΧΧ, έχει αναπτυχθεί στα πλαίσια του μαθήματος 'Τεχνολογία και Προγραμματισμός κινητών συσκευών'. Το έργο αυτό αποτελεί προϊόν δύο ατόμων. Στόχος της εφαρμογής είναι η εξοικείωση των χρηστών με τον έλεγχο της καθημερινής διατροφής τους, και η βελτίωση των συνηθειών αυτών."
+        android:textSize="20sp"
+        app:drawableTint="@color/purple_700"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="171dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
