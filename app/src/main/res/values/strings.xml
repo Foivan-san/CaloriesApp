@@ -6,4 +6,8 @@
     <string name="food">What have I eaten ?</string>
     <string name="recipes">Recipes</string>
     <string name="qr_scanner">QR Scanner</string>
+    <string name="welcome_title">Προγραμματισμός κινητών συσκευών</string>
+    <string name="stud1">Μπασαράς Φοίβος 18390195</string>
+    <string name="stud2">Καραμπάσης Ευστράτιος 18390169</string>
+    <string name="welcome_text">a diet app that will improve your lifestyle...</string>
 </resources>
