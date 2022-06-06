@@ -10,4 +10,6 @@
     <string name="stud1">Μπασαράς Φοίβος 18390195</string>
     <string name="stud2">Καραμπάσης Ευστράτιος 18390169</string>
     <string name="welcome_text">a diet app that will improve your lifestyle...</string>
+    <string name="menu_drawer_open">Drawer Open</string>
+    <string name="menu_drawer_close">Drawer Close</string>
 </resources>
