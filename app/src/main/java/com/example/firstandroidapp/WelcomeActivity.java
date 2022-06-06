@@ -13,8 +13,10 @@ public class WelcomeActivity extends DrawBaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        activityWelcomeBinding = ActivityWelcomeBinding.inflate(getLayoutInflater());
-        allocateActivityTitle("Welcome");
-        setContentView(activityWelcomeBinding.getRoot());
+        /*activityWelcomeBinding = ActivityWelcomeBinding.inflate(getLayoutInflater());
+       allocateActivityTitle("Welcome");
+       setContentView(activityWelcomeBinding.getRoot());*/
+        setContentView(R.layout.activity_draw_base);
+       setContentView(R.layout.activity_welcome);
     }
 }
