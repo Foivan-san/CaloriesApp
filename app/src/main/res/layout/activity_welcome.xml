@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,30 +7,32 @@
     android:background="@drawable/back_food_white"
     tools:context=".WelcomeActivity">
 
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:scaleType="centerCrop"
         android:src="@drawable/code_for_food"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="97dp"
-        tools:layout_editor_absoluteY="16dp" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"/>
 
     <TextView
-        android:layout_width="408dp"
-        android:layout_height="101dp"
-        android:layout_marginTop="80dp"
-        android:autoSizeTextType="uniform"
+        android:id="@+id/textLabel"
+        android:layout_width="290dp"
+        android:layout_height="290dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/imageView"
+        android:layout_centerInParent="true"
         android:fontFamily="@font/final_lob"
-        android:gravity="center"
-        android:text="welcome to the app where you can easily count the calories you consume every day, and also choose suitable recipes for you from a wide variety..."
+        android:text="@string/welcome_msg"
         android:textColor="@color/black"
-        android:textSize="13sp"
+        android:textSize="30sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="1dp" />
+        tools:layout_editor_absoluteX="61dp" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

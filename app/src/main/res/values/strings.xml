@@ -4,8 +4,9 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="statistics">Statistics</string>
     <string name="food">What have I eaten ?</string>
-    <string name="recipes">Recipes</string>
+    <string name="recipes">Smart Recipes</string>
     <string name="qr_scanner">QR Scanner</string>
+    <string name="logout">Log out</string>
     <string name="welcome_title">Προγραμματισμός κινητών συσκευών</string>
     <string name="stud1">Μπασαράς Φοίβος 18390195</string>
     <string name="stud2">Καραμπάσης Ευστράτιος 18390169</string>
@@ -23,4 +24,5 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="welcome_msg">Welcome to the app where you can easily count the calories you consume every day, and also choose suitable recipes for you from a wide variety...</string>
 </resources>
