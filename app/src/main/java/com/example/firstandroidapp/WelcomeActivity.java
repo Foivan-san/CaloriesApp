@@ -8,15 +8,9 @@ import com.example.firstandroidapp.databinding.ActivityWelcomeBinding;
 
 public class WelcomeActivity extends DrawBaseActivity {
 
-    ActivityWelcomeBinding activityWelcomeBinding;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        /*activityWelcomeBinding = ActivityWelcomeBinding.inflate(getLayoutInflater());
-       allocateActivityTitle("Welcome");
-       setContentView(activityWelcomeBinding.getRoot());*/
-        setContentView(R.layout.activity_draw_base);
-       setContentView(R.layout.activity_welcome);
+        setContentView(R.layout.nav_activity_main);
     }
 }
