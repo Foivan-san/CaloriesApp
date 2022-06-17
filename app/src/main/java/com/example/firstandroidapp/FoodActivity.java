@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.example.firstandroidapp.databinding.ActivityFoodBinding;
 
-public class FoodActivity extends DrawBaseActivity {
+public class FoodActivity extends DrawerActivity {
 
     ActivityFoodBinding activityFoodBinding;
 
@@ -14,7 +14,7 @@ public class FoodActivity extends DrawBaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         activityFoodBinding = ActivityFoodBinding.inflate(getLayoutInflater());
-        allocateActivityTitle("Food");
         setContentView(activityFoodBinding.getRoot());
+        allocateActivityTitle("Food");
     }
 }

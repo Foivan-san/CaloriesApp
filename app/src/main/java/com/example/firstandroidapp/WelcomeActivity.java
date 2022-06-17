@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.example.firstandroidapp.databinding.ActivityWelcomeBinding;
 
-public class WelcomeActivity extends DrawBaseActivity {
+public class WelcomeActivity extends DrawerActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
