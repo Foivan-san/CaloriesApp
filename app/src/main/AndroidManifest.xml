@@ -21,9 +21,6 @@
             android:label="@string/title_activity_drawer"
             android:theme="@style/Theme.FirstAndroidApp.NoActionBar" />
         <activity
-            android:name=".HomeActivity"
-            android:exported="false" />
-        <activity
             android:name=".StatisticsActivity"
             android:exported="false" />
         <activity
@@ -31,9 +28,6 @@
             android:exported="false" />
         <activity
             android:name=".WelcomeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".DrawBaseActivity"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
