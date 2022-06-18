@@ -4,17 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.example.firstandroidapp.databinding.ActivityFoodBinding;
-
-public class FoodActivity extends DrawerActivity {
-
-    ActivityFoodBinding activityFoodBinding;
+public class FoodActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        activityFoodBinding = ActivityFoodBinding.inflate(getLayoutInflater());
-        setContentView(activityFoodBinding.getRoot());
-        allocateActivityTitle("Food");
+        setContentView(R.layout.activity_food);
     }
 }
