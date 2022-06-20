@@ -41,15 +41,25 @@ public class WelcomeActivity extends AppCompatActivity implements NavigationView
 
     @Override
     public boolean onCreateOptionsMenu(@NonNull Menu menu) {
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.activity_main_drawer, menu);
-        return true;
+        return false;
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.nav_what_i_eat) {
             startActivity(new Intent(WelcomeActivity.this, FoodActivity.class));
+        }
+        else if (item.getItemId() == R.id.nav_recipe) {
+            startActivity(new Intent(WelcomeActivity.this, RecipesActivity.class));
+        }
+        else if (item.getItemId() == R.id.nav_stats) {
+            startActivity(new Intent(WelcomeActivity.this, StatsActivity.class));
+        }
+        else if (item.getItemId() == R.id.nav_qr) {
+            startActivity(new Intent(WelcomeActivity.this, QrActivity.class));
+        }
+        else if (item.getItemId() == R.id.nav_logout) {
+            startActivity(new Intent(WelcomeActivity.this, LogoutActivity.class));
         }
         return false;
     }

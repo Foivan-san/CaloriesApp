@@ -25,4 +25,5 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="welcome_msg">Welcome to the app where you can easily count the calories you consume every day, and also choose suitable recipes for you from a wide variety...</string>
+    <string name="full_app_name">Calories Calculator</string>
 </resources>
