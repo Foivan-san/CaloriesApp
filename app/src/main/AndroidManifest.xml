@@ -16,16 +16,20 @@
         android:theme="@style/Theme.FirstAndroidApp"
         tools:targetApi="31">
         <activity
-            android:name=".DrawerActivity"
-            android:exported="false"
-            android:label="@string/title_activity_drawer"
-            android:theme="@style/Theme.FirstAndroidApp.NoActionBar" />
+            android:name=".LogoutActivity"
+            android:exported="false" />
         <activity
-            android:name=".StatisticsActivity"
+            android:name=".QrActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StatsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RecipesActivity"
             android:exported="false" />
         <activity
             android:name=".FoodActivity"
-            android:exported="false" />
+            android:exported="false"/>
         <activity
             android:name=".WelcomeActivity"
             android:exported="false" />
