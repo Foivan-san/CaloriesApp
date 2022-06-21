@@ -26,4 +26,15 @@
     <string name="menu_slideshow">Slideshow</string>
     <string name="welcome_msg">Welcome to the app where you can easily count the calories you consume every day, and also choose suitable recipes for you from a wide variety...</string>
     <string name="full_app_name">Calories Calculator</string>
+
+    //strings for recipes
+
+    //recipes
+    <string name="description1">You have to boil the egg.</string>
+    <string name="description2">You have to boil the pasta.</string>
+    <string name="description3">You have to cook the beef.</string>
+
+    <string name="recipe1">Boiled egg.</string>
+    <string name="recipe2">Boiled pasta.</string>
+    <string name="recipe3">Cooked beef.</string>
 </resources>
