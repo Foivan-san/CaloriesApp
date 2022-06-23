@@ -4,19 +4,19 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+list/thumb"
-        android:layout_width="180dp"
-        android:layout_height="180dp"
+        android:id="@+id/thumb"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
         />
 
     <TextView
-        android:id="@+list/food_title"
-        android:layout_toRightOf="@+list/thumb"
+        android:id="@+id/food_title"
+        android:layout_toRightOf="@+id/thumb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="18dp"
+        android:textSize="13dp"
         android:layout_centerVertical="true"
         android:layout_marginLeft="10dp"
         android:singleLine="true"

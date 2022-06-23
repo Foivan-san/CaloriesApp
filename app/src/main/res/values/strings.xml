@@ -37,4 +37,5 @@
     <string name="recipe1">Boiled egg.</string>
     <string name="recipe2">Boiled pasta.</string>
     <string name="recipe3">Cooked beef.</string>
+    <string name="error">Error!</string>
 </resources>

@@ -43,9 +43,9 @@ public class RecipesDataSourceAdapter extends BaseAdapter {
 
         if (convertView == null)
             convertView = myInflater.inflate(R.layout.list_item_layout, parent,false);
-        thumbnail = (ImageView)convertView.findViewById(R.list.thumb);
+        thumbnail = (ImageView)convertView.findViewById(R.id.thumb);
         thumbnail.setImageResource(myDataSource.getPhotoPool().get(position));
-        name = (TextView)convertView.findViewById(R.list.text);
+        name = (TextView)convertView.findViewById(R.id.food_title);
         name.setText(myDataSource.getDishesPool().get(position));
 
         return convertView;
