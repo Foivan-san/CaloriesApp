@@ -18,5 +18,6 @@ public class RecipesActivity extends AppCompatActivity {
         ds = new RecipesDataSource();
         recipesListView = (ListView)findViewById(R.id.listView1);
         recipesListView.setAdapter(new RecipesDataSourceAdapter(this,ds));
+
     }
 }

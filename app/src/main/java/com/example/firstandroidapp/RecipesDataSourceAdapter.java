@@ -15,10 +15,12 @@ public class RecipesDataSourceAdapter extends BaseAdapter {
     private LayoutInflater myInflater;
     private RecipesDataSource myDataSource;
 
+
     public RecipesDataSourceAdapter(Context ctx, RecipesDataSource ds){
         myContext = ctx;
         myDataSource = ds;
         myInflater = (LayoutInflater) myContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
     }
 
     @Override
