@@ -4,6 +4,11 @@
     package="com.example.firstandroidapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false"/>
 
     <application
         android:allowBackup="true"
@@ -16,11 +21,9 @@
         android:theme="@style/Theme.FirstAndroidApp"
         tools:targetApi="31">
         <activity
-            android:name=".LogoutActivity"
-            android:exported="false" />
-        <activity
             android:name=".QrActivity"
-            android:exported="false" />
+            android:exported="false"
+            />
         <activity
             android:name=".StatsActivity"
             android:exported="false" />
@@ -45,6 +48,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".CaptureAct"
+            android:screenOrientation="portrait"
+            android:stateNotNeeded="true"
+            android:theme="@style/zxing_CaptureTheme"/>
     </application>
 
 </manifest>

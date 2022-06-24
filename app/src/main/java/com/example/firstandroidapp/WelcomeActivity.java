@@ -2,17 +2,22 @@ package com.example.firstandroidapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.lifecycle.MediatorLiveData;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.firestore.auth.User;
 
 public class WelcomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -40,8 +45,10 @@ public class WelcomeActivity extends AppCompatActivity implements NavigationView
     }
 
     @Override
-    public boolean onCreateOptionsMenu(@NonNull Menu menu) {
-        return false;
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.logout_option, menu);
+        return true;
     }
 
     @Override
@@ -58,9 +65,32 @@ public class WelcomeActivity extends AppCompatActivity implements NavigationView
         else if (item.getItemId() == R.id.nav_qr) {
             startActivity(new Intent(WelcomeActivity.this, QrActivity.class));
         }
-        else if (item.getItemId() == R.id.nav_logout) {
-            startActivity(new Intent(WelcomeActivity.this, LogoutActivity.class));
-        }
         return false;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.logout){
+            AlertDialog.Builder builder = new AlertDialog.Builder(WelcomeActivity.this);
+            builder.setMessage("Do you want to Log out ?");
+            builder.setCancelable(true);
+
+            builder.setNegativeButton("YES", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    finish();
+                }
+            });
+
+            builder.setPositiveButton("NO", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.cancel();
+                }
+            });
+            AlertDialog alertDialog = builder.create();
+            alertDialog.show();
+        }
+        return true;
     }
 }
