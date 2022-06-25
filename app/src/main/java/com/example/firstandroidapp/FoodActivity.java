@@ -1,59 +1,75 @@
 package com.example.firstandroidapp;
 
 
+import android.database.Cursor;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.widget.ArrayAdapter;
-import android.widget.SearchView;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.MenuItemCompat;
 
 import java.util.ArrayList;
-import java.util.Locale;
 
 public class FoodActivity extends AppCompatActivity {
+
+    DBAdapter dbAdapter;
+    Button add_food_btn;
+    EditText add_food;
+
+    ListView food_list;
+
+    ArrayList<String> listItem;
+    ArrayAdapter<String> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food);
 
-        public boolean onCreateOptionsMenu(Menu menu) {
-            MenuInflater inflater = getMenuInflater();
-            inflater.inflate(R.menu.menu);
+        dbAdapter = new DBAdapter(this);
 
-            MenuItem searchItem = menu.findItem(R.id.item_search);
-            SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
+        listItem = new ArrayList<String>();
 
-            searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-                @Override
-                public boolean onQueryTextSubmit(String query) {
-                    return false;
-                }
+        add_food_btn = findViewById(R.id.add_food_btn);
+        add_food = findViewById(R.id.add_food);
+        food_list = findViewById(R.id.food_list);
 
-                @Override
-                public boolean onQueryTextChange(String newText) {
-                    ArrayList<String> userlist = new ArrayList<>();
+        viewData();
 
-                    for (String user : listItem){
-                        if (user.toLowerCase().contains(newText.toLowerCase())){
-                            userlist.add(user);
-                        }
-                    }
+        food_list.setOnItemClickListener((adapterView, view, i, l) -> {
+            String text = food_list.getItemAtPosition(i).toString();
+            Toast.makeText(FoodActivity.this, ""+text, Toast.LENGTH_SHORT).show();
+        });
 
-                    ArrayAdapter<String> adapter = new ArrayAdapter<String>(FoodActivity.this,
-                            android.R.layout.simple_list_item_1, userlist);
-                    userlist.setAdapter(adapter);
+        add_food_btn.setOnClickListener(v -> {
+            String foodItem = add_food.getText().toString();
+            if(!foodItem.equals("") && dbAdapter.insertDataFood(foodItem)){
+                Toast.makeText(FoodActivity.this, "Food added", Toast.LENGTH_SHORT).show();
+                add_food.setText("");
+            }
+            else{
+                Toast.makeText(FoodActivity.this, "Food not added", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 
-                    return true;
-                }
-            });
+    private void viewData() {
+        Cursor cursor = dbAdapter.ViewDataFood();
+        if(cursor.getCount()==0){
+            Toast.makeText(FoodActivity.this, "No food to show", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            while (cursor.moveToNext()){
+                listItem.add(cursor.getString( 1));
+            }
 
-
-
+            adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listItem);
+            food_list.setAdapter(adapter);
         }
     }
+
+
 }

@@ -32,4 +32,6 @@
     <string name="title">Title</string>
     <string name="description">Description</string>
     <string name="recipesimage">RecipesImage</string>
+    <string name="add_a_food">Add a food</string>
+    <string name="add">Add</string>
 </resources>

@@ -114,4 +114,26 @@ public class DBAdapter {
             return count;
         }
         //----------------------------------------------------------------------------------------- Count
+
+
+        //Insert data for food page-----------------------------------------------------------------
+        public Boolean insertDataFood(String food_name) {
+            SQLiteDatabase MyDB = this.DBHelper.getWritableDatabase();
+            ContentValues contentValues = new ContentValues();
+            contentValues.put("food_name", food_name);
+            long result = MyDB.insert("food", null, contentValues);
+            if (result == -1) return false;
+            else
+                return true;
+        }
+        //------------------------------------------------------------------------------------------
+
+        //View data food----------------------------------------------------------------------------
+        public Cursor ViewDataFood(){
+            SQLiteDatabase db = this.DBHelper.getReadableDatabase();
+            String query = "SELECT * FROM food";
+            Cursor cursor = db.rawQuery(query, null);
+
+            return cursor;
+        }
 }
