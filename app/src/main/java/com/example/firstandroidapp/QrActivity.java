@@ -40,7 +40,7 @@ public class QrActivity extends AppCompatActivity {
         if(result.getContents() != null)
         {
             AlertDialog.Builder builder = new AlertDialog.Builder(QrActivity.this);
-            builder.setTitle("Result");
+            builder.setTitle("QR Code");
             builder.setMessage(result.getContents());
             builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 @Override

@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/basar/AndroidStudioProjects/CaloriesApp/app/src/main/res/drawable/logout.xml" value="0.314" />
+        <entry key="..\:/Users/basar/AndroidStudioProjects/CaloriesApp/app/src/main/res/layout-v26/single_item.xml" value="0.29257246376811596" />
         <entry key="..\:/Users/basar/AndroidStudioProjects/CaloriesApp/app/src/main/res/layout/activity_draw_base.xml" value="0.23550724637681159" />
         <entry key="..\:/Users/basar/AndroidStudioProjects/CaloriesApp/app/src/main/res/layout/activity_drawer.xml" value="0.23550724637681159" />
         <entry key="..\:/Users/basar/AndroidStudioProjects/CaloriesApp/app/src/main/res/layout/activity_food.xml" value="0.23550724637681159" />
@@ -32,6 +33,7 @@
         <entry key="..\:/Users/basar/AndroidStudioProjects/CaloriesApp/app/src/main/res/layout/nav_activity_main.xml" value="0.23550724637681159" />
         <entry key="..\:/Users/basar/AndroidStudioProjects/CaloriesApp/app/src/main/res/layout/nav_header_drawer.xml" value="0.23550724637681159" />
         <entry key="..\:/Users/basar/AndroidStudioProjects/CaloriesApp/app/src/main/res/layout/sign_toolbar.xml" value="0.2821557971014493" />
+        <entry key="..\:/Users/basar/AndroidStudioProjects/CaloriesApp/app/src/main/res/layout/single_item.xml" value="0.29257246376811596" />
         <entry key="..\:/Users/basar/AndroidStudioProjects/CaloriesApp/app/src/main/res/menu/activity_main_drawer.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/basar/AndroidStudioProjects/CaloriesApp/app/src/main/res/menu/drawer.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/basar/AndroidStudioProjects/CaloriesApp/app/src/main/res/menu/logout_option.xml" value="0.36666666666666664" />

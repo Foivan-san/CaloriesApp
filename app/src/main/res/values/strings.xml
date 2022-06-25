@@ -27,15 +27,9 @@
     <string name="welcome_msg">Welcome to the app where you can easily count the calories you consume every day, and also choose suitable recipes for you from a wide variety...</string>
     <string name="full_app_name">Calories Calculator</string>
 
-    //strings for recipes
-    <string name="recipe1"><a href="https://www.argiro.gr/recipe/kinoa-me-fakes-avokanto-kai-chaloumi/">Lentil salad with quinoa</a></string>
-    <string name="recipe2"><a href="https://www.argiro.gr/recipe/kroketes-me-spanaki/">Croquettes with spinach</a></string>
-    <string name="recipe3"><a href="https://www.baskini.gr/blog/ygieino-keik-karotoy-healthy-carrot-cake/">Healthy carrot cake</a></string>
-    <string name="recipe4"><a href="https://akispetretzikis.com/recipe/2646/superfood-cookies">Superfood cookies</a></string>
-    <string name="recipe5"><a href="https://www.baskini.gr/blog/sintages/syntagi-enallaktika-mpergker-burger-chamiles-thermides/">Low calories burger</a></string>
-    <string name="recipe6"><a href="https://www.mednutrition.gr/portal/syntages/kreas/15954-katsikaki-me-xoymous">Kid with hummus</a></string>
-
-
     <string name="error">Error!</string>
     <string name="scan">Scan QR</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="recipesimage">RecipesImage</string>
 </resources>
