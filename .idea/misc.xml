@@ -4,7 +4,6 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/basar/AndroidStudioProjects/CaloriesApp/app/src/main/res/drawable/logout.xml" value="0.314" />
-        <entry key="..\:/Users/basar/AndroidStudioProjects/CaloriesApp/app/src/main/res/layout-v26/single_item.xml" value="0.29257246376811596" />
         <entry key="..\:/Users/basar/AndroidStudioProjects/CaloriesApp/app/src/main/res/layout/activity_draw_base.xml" value="0.23550724637681159" />
         <entry key="..\:/Users/basar/AndroidStudioProjects/CaloriesApp/app/src/main/res/layout/activity_drawer.xml" value="0.23550724637681159" />
         <entry key="..\:/Users/basar/AndroidStudioProjects/CaloriesApp/app/src/main/res/layout/activity_food.xml" value="0.23550724637681159" />
@@ -33,7 +32,6 @@
         <entry key="..\:/Users/basar/AndroidStudioProjects/CaloriesApp/app/src/main/res/layout/nav_activity_main.xml" value="0.23550724637681159" />
         <entry key="..\:/Users/basar/AndroidStudioProjects/CaloriesApp/app/src/main/res/layout/nav_header_drawer.xml" value="0.23550724637681159" />
         <entry key="..\:/Users/basar/AndroidStudioProjects/CaloriesApp/app/src/main/res/layout/sign_toolbar.xml" value="0.2821557971014493" />
-        <entry key="..\:/Users/basar/AndroidStudioProjects/CaloriesApp/app/src/main/res/layout/single_item.xml" value="0.29257246376811596" />
         <entry key="..\:/Users/basar/AndroidStudioProjects/CaloriesApp/app/src/main/res/menu/activity_main_drawer.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/basar/AndroidStudioProjects/CaloriesApp/app/src/main/res/menu/drawer.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/basar/AndroidStudioProjects/CaloriesApp/app/src/main/res/menu/logout_option.xml" value="0.36666666666666664" />
@@ -70,11 +68,14 @@
         <entry key="..\:/Users/strat/StudioProjects/CaloriesApp/app/src/main/res/layout/main_drawer_header.xml" value="0.3473731884057971" />
         <entry key="..\:/Users/strat/StudioProjects/CaloriesApp/app/src/main/res/layout/nav_activity_main.xml" value="0.25" />
         <entry key="..\:/Users/strat/StudioProjects/CaloriesApp/app/src/main/res/layout/nav_header_drawer.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/strat/StudioProjects/CaloriesApp/app/src/main/res/layout/sign_toolbar.xml" value="0.3555253623188406" />
         <entry key="..\:/Users/strat/StudioProjects/CaloriesApp/app/src/main/res/layout/sign_up.xml" value="0.33" />
+        <entry key="..\:/Users/strat/StudioProjects/CaloriesApp/app/src/main/res/layout/single_item.xml" value="0.3555253623188406" />
         <entry key="..\:/Users/strat/StudioProjects/CaloriesApp/app/src/main/res/layout/welcome.xml" value="0.5" />
         <entry key="..\:/Users/strat/StudioProjects/CaloriesApp/app/src/main/res/menu/activity_main_drawer.xml" value="0.3009833262077811" />
         <entry key="..\:/Users/strat/StudioProjects/CaloriesApp/app/src/main/res/menu/drawer.xml" value="0.3009833262077811" />
         <entry key="..\:/Users/strat/StudioProjects/CaloriesApp/app/src/main/res/menu/main_drawer_menu.xml" value="0.365625" />
+        <entry key="..\:/Users/strat/StudioProjects/CaloriesApp/app/src/main/res/menu/menu.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/strat/StudioProjects/CaloriesApp/app/src/main/res/menu/mymenu.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/strat/StudioProjects/CaloriesApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.3205" />
       </map>
