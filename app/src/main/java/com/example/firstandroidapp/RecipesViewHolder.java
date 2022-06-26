@@ -8,7 +8,7 @@ public class RecipesViewHolder {
     ImageView itemImage;
     TextView programTitle;
     TextView programDescription;
-    // Get the handles by calling findViewById() on View object inside the constructor
+
     RecipesViewHolder(View v)
     {
         itemImage = v.findViewById(R.id.imageView);

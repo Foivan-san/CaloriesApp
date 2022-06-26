@@ -22,20 +22,10 @@ public class FoodActivity extends AppCompatActivity {
     ArrayList<String> listItem;
     ArrayAdapter<String> adapter;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food);
-
-        /*
-        food_list = findViewById(R.id.food_list);
-
-        adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_multiple_choice, listItem);
-        food_list.setAdapter(adapter);
-         */
 
         dbAdapter = new DBAdapter(this);
 
@@ -48,8 +38,6 @@ public class FoodActivity extends AppCompatActivity {
             String text = food_list.getItemAtPosition(i).toString();
             Toast.makeText(FoodActivity.this, ""+text, Toast.LENGTH_SHORT).show();
         });
-
-
     }
 
     private void viewData() {
@@ -76,6 +64,7 @@ public class FoodActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item){
+        int total_sum = 0;
         int id = item.getItemId();
         if (id == R.id.item_done){
             String itemSelected = "Selected items: \n";
