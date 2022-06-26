@@ -14,14 +14,14 @@
             android:theme="@style/Theme.Design.NoActionBar"
             android:id="@+id/toolbar">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/full_app_name"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/signin_field"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
 
         </androidx.appcompat.widget.Toolbar>
 

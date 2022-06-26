@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.firstandroidapp">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA"/>
 
@@ -20,11 +22,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FirstAndroidApp"
         tools:targetApi="31">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBFFB447KclfQRswrwq7vp9vupzrPGx8S0"/>
+
         <activity
             android:name=".QrActivity"
             android:exported="false"/>
         <activity
-            android:name=".StatsActivity"
+            android:name=".MapsActivity"
             android:exported="false"/>
         <activity
             android:name=".RecipesActivity"

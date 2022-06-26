@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 
 import java.util.ArrayList;
 
@@ -18,6 +19,7 @@ public class FoodActivity extends AppCompatActivity {
 
 
     DBAdapter dbAdapter;
+    SearchView searchView;
     ListView food_list;
     ArrayList<String> listItem;
     ArrayAdapter<String> adapter;
@@ -29,6 +31,7 @@ public class FoodActivity extends AppCompatActivity {
 
         dbAdapter = new DBAdapter(this);
 
+        searchView = findViewById(R.id.search_bar);
         listItem = new ArrayList<String>();
         food_list = findViewById(R.id.food_list);
 
@@ -36,7 +39,20 @@ public class FoodActivity extends AppCompatActivity {
 
         food_list.setOnItemClickListener((adapterView, view, i, l) -> {
             String text = food_list.getItemAtPosition(i).toString();
-            Toast.makeText(FoodActivity.this, ""+text, Toast.LENGTH_SHORT).show();
+        });
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                FoodActivity.this.adapter.getFilter().filter(query);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                FoodActivity.this.adapter.getFilter().filter(newText);
+                return false;
+            }
         });
     }
 

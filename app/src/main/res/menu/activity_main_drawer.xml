@@ -13,9 +13,9 @@
             android:icon="@drawable/recipe"
             android:title="@string/recipes" />
         <item
-            android:id="@+id/nav_stats"
-            android:icon="@drawable/statistics"
-            android:title="@string/statistics" />
+            android:id="@+id/nav_maps"
+            android:icon="@drawable/map"
+            android:title="@string/nutr_near" />
         <item
             android:id="@+id/nav_qr"
             android:icon="@drawable/qr"

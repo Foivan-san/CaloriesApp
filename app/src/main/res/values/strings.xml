@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CaloriesCalculator</string>
+    <string name="app_name">FoodCalculatorAndMore</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="statistics">Statistics</string>
@@ -24,8 +24,7 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
-    <string name="welcome_msg">Welcome to the app where you can easily count the calories you consume every day, and also choose suitable recipes for you from a wide variety…</string>
-    <string name="full_app_name">Calories Calculator</string>
+    <string name="welcome_msg">Welcome to the app where you can easily add the food you consume every day, and also choose suitable recipes for you from a wide variety…</string>
 
     <string name="error">Error!</string>
     <string name="scan">Scan QR</string>
@@ -34,4 +33,10 @@
     <string name="recipesimage">RecipesImage</string>
     <string name="add_a_food">Add a food</string>
     <string name="add">Add</string>
+    <string name="nutr_near">Find nutritionists near you</string>
+    <string name="signup_field">SignUp Field</string>
+    <string name="signin_field">SignIn Field</string>
+    <string name="food_calculator_and_more">Food Calculator and More</string>
+    <string name="f_c_a_m">F.C.A.M.</string>
+    <string name="push_btn">Push the button \n to scan a QR code</string>
 </resources>

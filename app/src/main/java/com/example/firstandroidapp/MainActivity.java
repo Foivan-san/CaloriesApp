@@ -3,8 +3,6 @@ package com.example.firstandroidapp;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -17,13 +15,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.common.api.GoogleApi;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.safetynet.SafetyNet;
 import com.google.android.gms.safetynet.SafetyNetApi;
-import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks {
 
@@ -113,7 +109,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
                                 Toast.makeText(MainActivity.this, "Registration failed", Toast.LENGTH_SHORT).show();
                             }
                         } else {
-                            Toast.makeText(MainActivity.this, "User already exists! please sign in", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, "User already exists! Please sign in", Toast.LENGTH_SHORT).show();
                         }
                     } else {
                         Toast.makeText(MainActivity.this, "Passwords not matching", Toast.LENGTH_SHORT).show();

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -56,8 +57,9 @@ public class WelcomeActivity extends AppCompatActivity implements NavigationView
         else if (item.getItemId() == R.id.nav_recipe) {
             startActivity(new Intent(WelcomeActivity.this, RecipesActivity.class));
         }
-        else if (item.getItemId() == R.id.nav_stats) {
-            startActivity(new Intent(WelcomeActivity.this, StatsActivity.class));
+        else if (item.getItemId() == R.id.nav_maps) {
+            Toast.makeText(this, "Don't forget to open your location!", Toast.LENGTH_LONG).show();
+            startActivity(new Intent(WelcomeActivity.this, MapsActivity.class));
         }
         else if (item.getItemId() == R.id.nav_qr) {
             startActivity(new Intent(WelcomeActivity.this, QrActivity.class));
